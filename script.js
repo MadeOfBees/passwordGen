@@ -1,9 +1,13 @@
 // Assignment Code
 // var generateBtn = document.querySelector("#generate");
-var numOfNum
+var first
 
 function generate() {
-  numOfNum = prompt("Please enter your name:", "Number here");
+  first = prompt("How many digits?", "Number here");
+  console.log (first);
+}
+
+
 // // Write password to the #password input
 // function writePassword() {
 //   var password = generatePassword();
