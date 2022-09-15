@@ -19,25 +19,20 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword(){
   answers[0] = prompt(questions[0]);
   if ((answers[0] > 8) && (answers[0] < 127)){
-    for (var i = 1; i < 3; i++){
-      answers[i] = prompt(questions[i] + " (write y for yes or n for no)");
-    return(answers)}
+    for (var i = 1; i < 4; i++){
+      answers[i] = prompt(questions[i] + " (write y for yes or n for no)");}
   } else {
     alert("You picked an ivalid number please choose between 8 and 127 chars")
   }
-}
-function generatePassword(){
-  for (var i = 1; i < 3; i++){
-    
-  } 
+  return(answers)
 }
 
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-}
+//   passwordText.value = password;
+
+// }
