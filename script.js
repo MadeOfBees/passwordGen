@@ -9,9 +9,9 @@ var symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", 
 // All the questions we will ask the user
 var questions = ["How many digits?", "Do you want capital letters? (write true for yes or false", "Do you want numbers?", "Do you want numbers?"];
 // Here's where we store all the user's answers
-var answers = ["","","","",]
+var answers = ["","","","",];
 // connects the variable generate Btn to the spot on our HTML that we set the ID of generate (to a button) 
-var generateBtn = document.getElementById('generate')
+var generateBtn = document.getElementById('generate');
 // looks for when the button's clicked and then executes the function write Password
 generateBtn.addEventListener("click", writePassword);
 
@@ -20,15 +20,22 @@ function writePassword(){
   answers[0] = prompt(questions[0]);
   if ((answers[0] > 8) && (answers[0] < 127)){
     for (var i = 1; i < 4; i++){
-      answers[i] = prompt(questions[i] + " (write y for yes or n for no)");}
+      answers[i] = prompt(questions[i] + " (write yes for yes or no for no)");}
   } else {
     alert("You picked an ivalid number please choose between 8 and 127 chars")
   }
   return(answers)
 }
-
-
-
+var possibleChar = possibleChar.concat(alphabetU)
+ if ((answers[2]) = ("yes")){
+  possibleChar = possibleChar.concat(alphabetL);
+ } if ((answers[3]) = ("yes")){
+  possibleChar = possibleChar.concat(number);
+    } if ((answers[4]) = ("yes")){
+  possibleChar = possibleChar.concat(symbols);
+    }
+  console.log (possibleChar);
+  
 // function writePassword() {
 //   var password = generatePassword();
 //   var passwordText = document.querySelector("#password");
