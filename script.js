@@ -5,8 +5,22 @@ var symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", 
 var questions = ["How many digits?", "Do you want capital letters? (write true for yes or false", "Do you want numbers?", "Do you want numbers?"];
 var Answers = ["","","","",]
 var generateBtn = document.getElementById('generate')
-
 generateBtn.addEventListener("click", writePassword);
+
+
+function writePassword() {
+  Answers[0] = prompt(questions[0]);
+  console.log (Answers[0])
+  if ((Answers[0] > 8) && (Answers[0] < 127)){
+    console.log("you picked a valid number"); 
+    for (var i = 1; i < 3; i++){
+    Answers[i] = prompt(questions[i] + " (write true for yes or false for no)");
+    console.log(Answers)
+    return(Answers)}
+  } else {
+    alert("You picked an ivalid number please choose between 8 and 127 chars")
+  }
+}
 
 function askQuestions() {
   console.log("yee")
@@ -15,16 +29,4 @@ function askQuestions() {
     console.log(Answers)
     return[Answers]}
     
-}
-
-function writePassword() {
-  Answers[0] = prompt(questions[0]);
-  console.log (Answers[0])
-  if ((Answers[0] > 8) && (Answers[0] < 127)){
-    console.log("you picked a valid number"); 
-    askQuestions;
-    return(Answers)
-  } else {
-    alert("You picked an ivalid number please choose between 8 and 127 chars")
-  }
 }
