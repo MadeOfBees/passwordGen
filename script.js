@@ -26,14 +26,11 @@ function writePassword(){
   }
   return(answers)
 }
-var possibleChar = possibleChar.concat(alphabetU)
- if ((answers[2]) = ("yes")){
-  possibleChar = possibleChar.concat(alphabetL);
- } if ((answers[3]) = ("yes")){
-  possibleChar = possibleChar.concat(number);
-    } if ((answers[4]) = ("yes")){
-  possibleChar = possibleChar.concat(symbols);
-    }
+// This doesn't work BUGBUG
+var possibleChar = (alphabetU)
+if ((answers[2]) = ("yes")){possibleChar = possibleChar.concat(alphabetL);}
+if ((answers[3]) = ("yes")){possibleChar = possibleChar.concat(number);}
+if ((answers[4]) = ("yes")){possibleChar = possibleChar.concat(symbols);}
   console.log (possibleChar);
   
 // function writePassword() {
