@@ -1,6 +1,6 @@
 # passwordGen
 ## What is this?   
-A basic proof of concept password generator. NOTICE:DO NOT USE AS AN ACTUAL PASSWORD.
+A basic proof of concept password generator. NOTICE: DO NOT USE AS AN ACTUAL PASSWORD.
 
 ## Installation
 
