@@ -7,15 +7,17 @@ var number = ["1","2","3","4","5","6","7","8","9","0"];
 // "All" possible symbols in an array
 var symbols = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", "|", ":", ";", "'","<", ",", ">",".","?","/"];
 // All the questions we will ask the user
-var questions = ["How many digits?", "Do you want capital letters?", "Do you want numbers?", "Do you want symols?"];
+var questions = ["How many digits?", "Do you want capital letters?", "Do you want numbers?", "Do you want symbols?"];
 // Here's where we store all the user's answers
 var answers = ["","","","",];
 // connects the variable generate Btn to the spot on our HTML that we set the ID of generate (to a button) 
 var generateBtn = document.getElementById('generate');
-// looks for when the button's clicked and then executes the function write Password
-generateBtn.addEventListener("click", writePassword);
+// looks for when the button's clicked and then executes the function to ask user for peramiters
+var possibleChar
+generateBtn.addEventListener("click", askQuestions);
 // And here's that function
-function writePassword(){
+
+function askQuestions(){
   answers[0] = prompt(questions[0]);
   if ((answers[0] > 8) && (answers[0] < 127)){
     for (var i = 1; i < 4; i++){
@@ -25,24 +27,28 @@ function writePassword(){
   }
   letterSoup(answers);
   answers = ["","","","",];
-  return(answers);
-}
-
+  return(answers);}
 // this function creats a list of possible characters based on our criteria from the quest
-function letterSoup(answers){var possibleChar = (alphabetU);
-  console.log (answers);
-if (answers[2]){possibleChar = possibleChar.concat(alphabetL);}
-if (answers[3]){possibleChar = possibleChar.concat(number);}
-if (answers[4]){possibleChar = possibleChar.concat(symbols);}
-console.log (possibleChar);
+
+function letterSoup(answers){possibleChar = (alphabetL);
+if (answers[1]){possibleChar = possibleChar.concat(alphabetU);}
+if (answers[2]){possibleChar = possibleChar.concat(number);}
+if (answers[3]){possibleChar = possibleChar.concat(symbols);}
+writePassword(answers, possibleChar);}
+
+function writePassword(answers, possibleChar){
+  var passwordBlocks;
+  for (var i = answers[0]; i > 0; i--){
+  var rand = possibleChar[Math.floor(Math.random() * possibleChar.length)];
+    console.log (rand);
+  }
+
+
+
+
+
+  // var password = generatePassword();
+  // var passwordText = document.querySelector("#password");
+
+  // passwordText.value = password;
 }
-
-
-
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
