@@ -17,6 +17,7 @@ var possibleChar
 generateBtn.addEventListener("click", askQuestions);
 // And here's that function
 
+
 function askQuestions(){
   answers[0] = prompt(questions[0]);
   if ((answers[0] > 8) && (answers[0] < 127)){
@@ -34,21 +35,17 @@ function letterSoup(answers){possibleChar = (alphabetL);
 if (answers[1]){possibleChar = possibleChar.concat(alphabetU);}
 if (answers[2]){possibleChar = possibleChar.concat(number);}
 if (answers[3]){possibleChar = possibleChar.concat(symbols);}
-writePassword(answers, possibleChar);}
+buildPassword(answers, possibleChar);}
 
-function writePassword(answers, possibleChar){
-  var passwordBlocks;
+function buildPassword(answers, possibleChar){
+  var passwordBlocks = [""];
   for (var i = answers[0]; i > 0; i--){
-  var rand = possibleChar[Math.floor(Math.random() * possibleChar.length)];
-    console.log (rand);
+    var rand = possibleChar[Math.floor(Math.random() * possibleChar.length)];
+    passwordBlocks.push(rand)
   }
-
-
-
-
-
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = password;
+  passwordBlocks.shift();
+  password = passwordBlocks.join("")
+  console.log (password);
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password;
 }
