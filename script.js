@@ -26,7 +26,7 @@ function askQuestions(){
       answers[i] = confirm("Do you want " + (questions[i]) + "? (Click OK to confirm you would like " + (questions[i]) + " or click cancel if you'd like to continue without " + (questions[i]) + ".");}
   } else { 
     // Tells the user their number is invalid
-    alert("You picked an ivalid number please choose between 8 and 128 chars")
+    alert("You picked an ivalid number please choose number between 8 and 128 chars")
   }
   letterSoup(answers);
   answers = ["","","","",];
@@ -53,5 +53,5 @@ function buildPassword(answers, possibleChar){
   passwordText.value = password;
   // sets button to green
   generateBtn.setAttribute("style", "background-color: rgb(92, 212, 76);", );
-  document.getElementById("generate").innerHTML = "Generate another?";
+  document.getElementById("generate").innerHTML = "Generate another";
 }
