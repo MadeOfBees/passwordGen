@@ -17,11 +17,15 @@ var possibleChar
 generateBtn.addEventListener("click", askQuestions);
 // And here's that function
 function askQuestions(){
+  // asks first question and saves first answer
   answers[0] = prompt(questions[0]);
+  // check the first answer is a number and it's between 8-128
   if ((answers[0] >= 8) && (answers[0] <= 128)){
+    // if it is ask all 3 of our questions and record the answers on the same array we used for the first Q/A combo
     for (var i = 1; i < 4; i++){
       answers[i] = confirm("Do you want " + (questions[i]) + "? (Click OK to confirm you would like " + (questions[i]) + " or click cancel if you'd like to continue without " + (questions[i]) + ".");}
-  } else {
+  } else { 
+    // Tells the user their number is invalid
     alert("You picked an ivalid number please choose between 8 and 128 chars")
   }
   letterSoup(answers);
@@ -37,12 +41,16 @@ buildPassword(answers, possibleChar);}
 function buildPassword(answers, possibleChar){
   var passwordBlocks = [""];
   for (var i = answers[0]; i > 0; i--){
+      // keep getting random numbers for each digit we chose in the first answer
     var rand = possibleChar[Math.floor(Math.random() * possibleChar.length)];
     passwordBlocks.push(rand)
   }
+  // takes off the 0th value because we started counting at 1, I know I could fix it but this works
   passwordBlocks.shift();
   password = passwordBlocks.join("")
   var passwordText = document.querySelector("#password");
+  // writes down our password to the page
   passwordText.value = password;
+  // sets button to green
   generateBtn.setAttribute("style", "background-color: rgb(92, 212, 76);");
 }
