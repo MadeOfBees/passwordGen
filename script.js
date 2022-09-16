@@ -27,10 +27,10 @@ function askQuestions(){
   } else { 
     // Tells the user their number is invalid
     alert("You picked an ivalid number please choose number between 8 and 128 chars")
+    return
   }
   letterSoup(answers);
-  answers = ["","","","",];
-  return(answers);}
+}
 // this function creats a list of possible characters based on our criteria from the quest
 function letterSoup(answers){possibleChar = (alphabetL);
 if (answers[1]){possibleChar = possibleChar.concat(alphabetU);}
