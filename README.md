@@ -4,7 +4,7 @@ A basic proof of concept password generator. NOTICE:DO NOT USE AS AN ACTUAL PASS
 
 ## Installation
 
-Open it in pages
+Open it in pages: https://madeofbees.github.io/passwordGen/
 
 ## Usage
 Click the red button to begin generating a password
