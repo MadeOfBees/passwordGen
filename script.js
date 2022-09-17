@@ -53,5 +53,5 @@ function buildPassword(answers, possibleChar){
   passwordText.value = password;
   // sets button to green
   generateBtn.setAttribute("style", "background-color: rgb(92, 212, 76);", );
-  document.getElementById("generate").innerHTML = "Generate another";
+  document.getElementById("generate").innerHTML = "Generate Another";
 }
